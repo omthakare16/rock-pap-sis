@@ -86,7 +86,6 @@ buttons.forEach((button) => {
     // content.insertBefore(score, buttons[0]);
     // content.appendChild(score);
 
-    console.log(com, playr);
     if (playr == 5 || com == 5) {
       if (playr == com) {
         // console.log("it's a tie game");
