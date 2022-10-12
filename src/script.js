@@ -42,16 +42,22 @@ var com = 0;
 var playr = 0;
 const status = document.createElement("div");
 const result = document.createElement("div");
-const score = document.createElement("div");
-score.classList.add("scr");
+const score = document.getElementById("demo4");
+const val = document.getElementById("demo3");
+// score.classList.add("scr");
+result.classList.add("rslt");
+status.classList.add("stat");
+val.textContent = "(Ready)" + " " + "(Ready)";
 score.textContent = com + " " + playr;
 // content.insertBefore(score, buttons[0]);
-content.appendChild(score);
+// content.appendChild(score);
 
 buttons.forEach((button) => {
   // and for each one we add a 'click' listener
   button.addEventListener("click", () => {
-    let playerSelection = button.innerText;
+    let playerSelection = button.className;
+    let computerSelection = getComputerChoice();
+    val.textContent = "(" + computerSelection + ") (" + playerSelection + ")";
     if (playr == 5 || com == 5) {
       result.textContent = "";
       k = 0;
@@ -61,32 +67,39 @@ buttons.forEach((button) => {
     }
     k = k + 1;
 
-    let computerSelection = getComputerChoice();
     if (playRound(playerSelection, computerSelection) == 1) {
       playr = playr + 1;
-      status.textContent = "";
+      status.textContent = "=>";
+      status.style.color = "green";
+      content.appendChild(status);
     } else if (playRound(playerSelection, computerSelection) == 2) {
-      status.textContent = "Tie";
+      status.textContent = "tie";
+      status.style.color = "white";
       content.appendChild(status);
     } else {
       com = com + 1;
-      status.textContent = "";
+      status.textContent = "<=";
+      status.style.color = "red";
+      content.appendChild(status);
     }
     score.textContent = com + " " + playr;
     // content.insertBefore(score, buttons[0]);
-    content.appendChild(score);
-    
+    // content.appendChild(score);
+
     console.log(com, playr);
     if (playr == 5 || com == 5) {
       if (playr == com) {
         // console.log("it's a tie game");
         result.textContent = "It's a tie game";
+        result.style.color = "black";
       } else if (playr > com) {
         // console.log("you WIN");
-        result.textContent = "YOU WIN";
+        result.textContent = "you Win";
+        result.style.color = "green";
       } else {
         // console.log("you lose better luck next time");
-        result.textContent = "you lose better luck next time";
+        result.textContent = "you Lose";
+        result.style.color = "red";
       }
       content.appendChild(result);
     }
@@ -100,8 +113,12 @@ function reset() {
   com = 0;
   playr = 0;
   k = 0;
-  score.textContent =  com + " " + playr;
-  result.textContent = ""; 
+  score.textContent = com + " " + playr;
+  result.textContent = "";
+  val.textContent = "";
+  val.textContent = "(Ready)" + " " + "(Ready)";
+  status.style.color = "white";
+  status.textContent = "== ";
 }
 // for (let i = 0; i < 5; i++) {
 //   let computerSelection = getComputerChoice();

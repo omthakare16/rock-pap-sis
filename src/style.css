@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nabla&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap");
+:root {
+  color-scheme: dark;
+}
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#butn-rps {
+  margin-top: -50px;
+  scale: 0.6;
+}
+.rock,
+.paper,
+.scissors {
+  text-decoration: none;
+  border: none;
+  padding: 0;
+  margin-inline: 15px;
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 7px 6px 28px 1px rgba(255, 255, 255, 0.664);
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s all;
+}
+.rst-bt {
+  margin-left: 25%;
+}
+#rst {
+  background-color: rgb(229, 0, 225);
+  border-radius: 10px;
+  font-size: 15px;
+  border: none;
+  box-shadow: 4px 2px 28px 1px rgba(255, 255, 255, 0.283);
+  transition: 0.3s all;
+  font-family: "Fredoka One", cursive;
+}
+#rst:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+button:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+button img {
+  border-radius: 20px;
+}
+#demo {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 0px;
+  margin-top: 20px;
+  font-family: "Nabla", cursive;
+}
+#demo2 {
+  margin-top: 80px;
+  text-align: center;
+  word-spacing: 34px;
+  font-size: 30px;
+  font-family: "Pangolin", cursive;
+}
+.man-bx {
+  margin: 20px auto;
+}
+
+#rst {
+  margin-left: 28%;
+}
+.stat {
+  position: absolute;
+  top: 249px;
+  left: 48.7vw;
+  font-size: 25px;
+  font-weight: 900;
+  font-family: "Kalam", cursive;
+}
+
+#demo3 {
+  text-align: center;
+  margin-top: -30px;
+  word-spacing: 110px;
+  font-family: "Fredoka One", cursive;
+}
+#demo4 {
+  text-align: center;
+  margin-top: -10px;
+  font-size: 35px;
+  padding-left: 5%;
+  letter-spacing: 70px;
+  font-family: "Kalam", cursive;
+}
+
+.rslt {
+  position: absolute;
+  top: 90px;
+  font-size: 40px;
+  left: 43.7vw;
+  font-family: "Rock Salt", cursive;
+}
